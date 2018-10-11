@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <%- include ../layout/head %>
+
+    <script src="//cdn.tinymce.com/4/tinymce.min.js"></script>
+    <script>tinymce.init({ selector:'textarea' });</script>
+</head>
+<body>
+    <div class="container">
+        <%- include ../layout/nav %>
+
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                Edit Post
+            </div>
+            <div class="panel-body">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <% if (data && data.error){ %>
+                        <div style="" id="login-alert" class="alert alert-danger col-sm-12">
+                            <%= data.error%>
+                        </div>
+                        <%}%>
+
+                        <form role="form" method="" action="">
+                            <input class="id" type="hidden" name="id" value="<% if (data && data.post){%><%= data.post.id%><%}%>">
+
+                            <div class="form-group">
+                                <label>Title</label>
+                                <input class="form-control title" name="title" placeholder="Title" value="<% if (data && data.post){%><%= data.post.title%><%}%>">
+                            </div>
+                            <div class="form-group">
+                                <label>Content</label>
+                                <textarea class="form-control" name="content" placeholder="Content"><% if (data && data.post){%><%= data.post.content%><%}%></textarea>
+                            </div>
+                            <div class="form-group">
+                                <label>Author</label>
+                                <input class="form-control author" name="author" placeholder="Author" value="<% if (data && data.post){%><%= data.post.author%><%}%>">
+                            </div>
+
+                            <input type="button" name="" value="Edit" class="btn btn-success post_edit" />
+                        </form>
+                    </div>
+                    <!-- /.col-lg-6 (nested) -->
+                </div>
+                <!-- /.row (nested) -->
+            </div>
+            <!-- /.panel-body -->
+        </div>
+    </div>
+
+    <script type="text/javascript" src="/static/js/post.js"></script>
+
+</body>
+</html>

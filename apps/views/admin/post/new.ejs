@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <%- include ../layout/head %>
+
+    <script src="//cdn.tinymce.com/4/tinymce.min.js"></script>
+    <script>tinymce.init({ selector:'textarea' });</script>
+</head>
+<body>
+    <div class="container">
+        <%- include ../layout/nav %>
+
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                Add new Post
+            </div>
+            <div class="panel-body">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <% if (data && data.error){ %>
+                        <div style="" id="login-alert" class="alert alert-danger col-sm-12">
+                            <%= data.error%>
+                        </div>
+                        <%}%>
+
+                        <form role="form" method="POST" action="/admin/post/new">
+                            <div class="form-group">
+                                <label>Title</label>
+                                <input class="form-control" name="title" placeholder="Title">
+                            </div>
+                            <div class="form-group">
+                                <label>Content</label>
+                                <textarea class="form-control" name="content" placeholder="Content"></textarea>
+                            </div>
+                            <div class="form-group">
+                                <label>Author</label>
+                                <input class="form-control" name="author" placeholder="Author">
+                            </div>
+
+                            <input type="submit" name="" value="Add" class="btn btn-success" />
+                        </form>
+                    </div>
+                    <!-- /.col-lg-6 (nested) -->
+                </div>
+                <!-- /.row (nested) -->
+            </div>
+            <!-- /.panel-body -->
+        </div>
+    </div>
+
+</body>
+</html>

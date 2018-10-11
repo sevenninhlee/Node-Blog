@@ -1,0 +1,15 @@
+h1 {
+    color: red;
+}
+
+header.intro-header {
+    padding-top: 10rem;
+    padding-bottom: 24.7rem;
+    background-image: url("../imgs/header.jpg");
+    background-position: center center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    margin-bottom: 0px;
+  }
