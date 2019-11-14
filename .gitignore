@@ -1,6 +1,8 @@
 # Dependency directories
 node_modules/
-node_modules/*
 .env
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
 
 
