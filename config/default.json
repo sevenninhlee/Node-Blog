@@ -5,8 +5,8 @@
     },
     "mysql": {
         "database" : "node_blog",
-        "user" : "root",
-        "password" : "abcABC123@@@",
+        "user" : "my_user",
+        "password" : "my_password",
         "host" : "localhost",
         "port" : "3306"
     },
