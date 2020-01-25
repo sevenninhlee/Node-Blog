@@ -3,15 +3,15 @@ var q = require('q');
 
 var conn = db.getConnection();
 
-function addUser(user){
+function addUser(user) {
 
-    if(user){
+    if (user) {
         var defer = q.defer();
 
-        var query = conn.query('INSERT INTO users SET ?', user, function(err, result) {
-            if(err){
+        var query = conn.query('INSERT INTO users SET ?', user, function (err, result) {
+            if (err) {
                 defer.reject(err);
-            }else{
+            } else {
                 defer.resolve(result);
             }
         });
@@ -21,14 +21,14 @@ function addUser(user){
     return false;
 }
 
-function getUserByEmail(email){
-    if(email){
+function getUserByEmail(email) {
+    if (email) {
         var defer = q.defer();
 
-        var query = conn.query('SELECT * FROM users WHERE ?', {email: email}, function(err, result){
-            if(err){
+        var query = conn.query('SELECT * FROM users WHERE ?', { email: email }, function (err, result) {
+            if (err) {
                 defer.reject(err);
-            }else{
+            } else {
                 defer.resolve(result);
             }
         });
@@ -39,13 +39,13 @@ function getUserByEmail(email){
     return false;
 }
 
-function getAllUsers(){
+function getAllUsers() {
     var defer = q.defer();
 
-    var query = conn.query('SELECT * FROM users', function(err, users){
-        if(err){
+    var query = conn.query('SELECT * FROM users', function (err, users) {
+        if (err) {
             defer.reject(err);
-        }else{
+        } else {
             defer.resolve(users);
         }
     });
@@ -54,7 +54,7 @@ function getAllUsers(){
 }
 
 module.exports = {
-    addUser : addUser,
-    getUserByEmail : getUserByEmail,
-    getAllUsers : getAllUsers,
+    addUser: addUser,
+    getUserByEmail: getUserByEmail,
+    getAllUsers: getAllUsers,
 }
